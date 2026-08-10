@@ -1,0 +1,346 @@
+/* ── Hero ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--bg-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-bottom: 32px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.headline {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+
+.gradText {
+  background: var(--grad-logo);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sub {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.heroCta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+
+/* Terminal mockup */
+.terminal {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  max-width: 620px;
+  overflow: hidden;
+}
+
+.terminalDots {
+  display: flex;
+  gap: 6px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--bg-border);
+}
+.terminalDots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.terminalDots span:nth-child(1) { background: #ff5f57; }
+.terminalDots span:nth-child(2) { background: #ffbd2e; }
+.terminalDots span:nth-child(3) { background: #28c840; }
+
+.terminalBody {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: #cdd6f4;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+/* ── Feature Grid ── */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--bg-border);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.featureCard {
+  background: var(--bg-card);
+  padding: 36px 28px;
+  transition: background var(--duration) var(--ease-out);
+}
+.featureCard:hover {
+  background: var(--bg-hover);
+}
+
+.featureStat {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.featureIcon {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.accent_cyan  .featureIcon { color: var(--accent-cyan); }
+.accent_blue  .featureIcon { color: var(--accent-blue); }
+.accent_purple .featureIcon { color: var(--accent-purple); }
+
+.featureLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.featureTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.featureDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Section header ── */
+.sectionEyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-family: var(--font-mono);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+}
+
+/* ── Flow ── */
+.flowSection {}
+
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 600px;
+  gap: 0;
+}
+
+.flowStep {
+  display: grid;
+  grid-template-columns: 48px 180px 1fr;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--bg-border);
+}
+.flowStep:last-child { border-bottom: none; }
+
+.flowNum {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.flowLabel {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+}
+
+.flowDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.flowArrow {
+  display: none;
+}
+
+/* ── SDKs ── */
+.sdkSection {}
+
+.sdkGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.sdkPill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  transition: border-color var(--duration) var(--ease-out),
+              color var(--duration) var(--ease-out),
+              background var(--duration) var(--ease-out);
+}
+.sdkPill:hover {
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.sdkIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sdkIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sdkLabel {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.sdkCta {}
+
+/* ── CTA Banner ── */
+.ctaBanner {}
+
+.ctaBox {
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding: 64px 48px;
+  text-align: center;
+  background: var(--bg-card);
+  position: relative;
+  overflow: hidden;
+}
+.ctaBox::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: var(--grad-logo);
+}
+
+.ctaTitle {
+  font-family: var(--font-mono);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.ctaSub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+  .flowStep {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .flowDesc {
+    grid-column: 2;
+  }
+  .ctaBox {
+    padding: 40px 24px;
+  }
+}

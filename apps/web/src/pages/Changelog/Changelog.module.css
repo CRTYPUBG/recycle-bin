@@ -1,0 +1,129 @@
+.root { padding: 80px 0; }
+
+.header {
+  max-width: 560px;
+  margin-bottom: 64px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-top: 1px solid var(--bg-border);
+}
+.entry:last-child {
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 80px;
+  align-self: start;
+}
+
+.versionBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.version {
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  background: rgba(0,229,255,0.1);
+  color: var(--accent-cyan);
+  border-radius: 999px;
+  border: 1px solid rgba(0,229,255,0.2);
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Changes list */
+.changes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.change {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.changeType {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.type_cyan   { background: rgba(0,229,255,0.08);  color: var(--accent-cyan); }
+.type_blue   { background: rgba(59,130,246,0.08); color: var(--accent-blue); }
+.type_red    { background: rgba(248,113,113,0.08); color: #f87171; }
+.type_muted  { background: var(--bg-hover); color: var(--text-muted); }
+
+.changeText {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .meta { position: static; }
+}

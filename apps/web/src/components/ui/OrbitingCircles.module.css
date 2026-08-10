@@ -1,0 +1,124 @@
+@keyframes orbit-cw {
+  from { transform: rotate(var(--start-angle)); }
+  to   { transform: rotate(calc(var(--start-angle) + 360deg)); }
+}
+@keyframes orbit-ccw {
+  from { transform: rotate(var(--start-angle)); }
+  to   { transform: rotate(calc(var(--start-angle) - 360deg)); }
+}
+@keyframes counter-cw {
+  from { transform: rotate(var(--counter-offset, 0deg)); }
+  to   { transform: rotate(calc(var(--counter-offset, 0deg) - 360deg)); }
+}
+@keyframes counter-ccw {
+  from { transform: rotate(var(--counter-offset, 0deg)); }
+  to   { transform: rotate(calc(var(--counter-offset, 0deg) + 360deg)); }
+}
+
+/* ── Container — exact match: bottom-anchored rings, overflow clipped ── */
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 440px;       /* h-110 * 4 */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    height: 640px;     /* h-160 * 4 */
+  }
+}
+
+/* ── Sphere — bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 ── */
+.sphere {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+  width: 300px;        /* w-75 * 4 */
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .sphere {
+    width: 580px;      /* w-145 * 4 */
+  }
+}
+
+/* ── Ring — bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-full border ── */
+.ring {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  /* size set inline via CSS var */
+  width:  var(--ring-size-mob);
+  height: var(--ring-size-mob);
+  transform: translateX(-50%) translateY(50%);
+}
+
+@media (min-width: 768px) {
+  .ring {
+    width:  var(--ring-size);
+    height: var(--ring-size);
+  }
+}
+
+/* ── Arm — absolute top-0 left-1/2 h-1/2 -ml-8 origin-bottom ── */
+.arm {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 50%;
+  width: 0;
+  margin-left: -16px;  /* -ml-4 → icon half-width */
+  transform-origin: bottom center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* ── Icon — rounded-full bg-background border -mt-8 ── */
+.icon {
+  position: relative;
+  top: -20px;           /* -mt-5 pulls icon above ring edge */
+  z-index: 10;
+  padding: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: 50%;   /* rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .arm {
+    margin-left: -20px;
+  }
+  .icon {
+    padding: 14px;
+    top: -24px;
+  }
+  .icon svg {
+    width: 32px;
+    height: 32px;
+  }
+}
