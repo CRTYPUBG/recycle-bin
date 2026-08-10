@@ -1,0 +1,75 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+out/
+
+# Lock files (keep pnpm-workspace.yaml but not lock)
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor files
+.idea/
+.vscode/
+*.suo
+*.user
+*.swp
+*.swo
+*~
+
+# TypeScript cache
+*.tsbuildinfo
+.tscache/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Docker volumes / overrides
+docker-compose.override.yml
+
+# Drizzle generated migrations (keep schema but skip generated)
+packages/core/drizzle/
+
+# Temp / scratch files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Certificates / secrets
+*.pem
+*.key
+*.cert
+*.p12

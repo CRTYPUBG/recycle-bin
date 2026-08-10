@@ -1,0 +1,36 @@
+{
+  "name": "crty/recycle-bin",
+  "description": "PHP SDK for Recycle Bin — Self-hosted Deleted Content Recovery System",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "CRTY",
+      "email": "info@crty-dev.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Crty\\RecycleBin\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Crty\\RecycleBin\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Crty\\RecycleBin\\Laravel\\RecycleBinServiceProvider"
+      ],
+      "aliases": {
+        "RecycleBin": "Crty\\RecycleBin\\Laravel\\Facades\\RecycleBin"
+      }
+    }
+  }
+}

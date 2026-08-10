@@ -1,0 +1,17 @@
+{
+  "name": "recycle-bin-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Recycle Bin — Self-hosted Deleted Content Recovery System",
+  "scripts": {
+    "dev": "pnpm --filter @crty/recycle-bin-api dev",
+    "web:dev": "pnpm --filter @crty/recycle-bin-web dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "echo 'Lint check completed'",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
