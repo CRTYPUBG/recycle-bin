@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Fixed dot-grid canvas layer — behind everything */
+.bgLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main {
+  flex: 1;
+  padding-top: 60px; /* navbar height offset */
+  position: relative;
+  z-index: 1;
+}
